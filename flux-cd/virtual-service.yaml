@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: podinfo
+  namespace: flux
+spec:
+  gateways:
+  - istio-system/default
+  hosts:
+  - 'podinfo.playkids.io'
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+    - destination:
+        host: podinfo
+        port:
+          number: 9898

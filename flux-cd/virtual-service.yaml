@@ -16,4 +16,4 @@ spec:
     - destination:
         host: podinfo
         port:
-          number: 9898
+          number: 9999
